@@ -1,0 +1,88 @@
+[project]
+name            = "cpm"
+version         = "1.0.0"
+description     = "Change-Point Optimization for Building Energy Models"
+readme          = "README.md"
+requires-python = ">=3.14"
+authors         = [{ name = "beskep", email = "beskep42@gmail.com" }]
+dependencies    = [
+  "colorama>=0.4.6",
+  "cyclopts>=4.8.0",
+  "holidays>=0.92",
+  "more-itertools>=10.8.0",
+  "structlog>=25.5.0",
+  "tqdm>=4.67.3",
+  "xlsxwriter>=3.2.9",
+]
+
+[dependency-groups]
+dev      = [
+  "ruff>=0.17.0",
+  "ty>=0.0.87",
+]
+numeric  = [
+  "numpy>=2.4.3",
+  "polars>=1.39.2,<2",
+  "pyarrow>=23.0.1",
+  "scikit-learn>=1.8.0",
+  "scikit-misc>=0.5.3",
+  "scipy>=1.18.1",
+]
+optimize = [
+  "piecewise-regression>=1.5.0",
+  "scikit-learn>=1.8.0",
+  "statsmodels>=0.14.6",
+]
+plot     = [
+  "matplotlib>=3.10.8",
+  "seaborn>=0.13.2",
+]
+
+[build-system]
+requires      = ["uv_build>=0.11.2,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.mypy]
+check_untyped_defs  = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.ruff]
+preview       = true
+output-format = "concise"
+
+[tool.ruff.format]
+quote-style           = "single"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+# tombi: format.rules.array-values-order = "ascending"
+ignore = ["ANN", "COM", "CPY", "FIX", "Q", "S", "T20", "TD", "suppressible-exception", "undocumented-magic-method"]
+
+[tool.ruff.lint.pydoclint]
+ignore-one-line-docstrings = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.rumdl]
+line-length = 120
+
+[tool.tombi.format.rules]
+key-value-equals-sign-alignment = true
+line-width                      = 120
+trailing-comment-alignment      = true
+
+[tool.ty.terminal]
+output-format = "concise"
+
+[tool.typos.default.extend-words]
+MAPE  = "MAPE"   # Mean Absolute Percentage Error
+ttest = "ttest"  # t-test
+
+[tool.typos.files]
+extend-exclude = ["*.bib"]
+
+[tool.uv]
+default-groups = "all"

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Change-Point Optimization for Building Energy Models"
+version: 1.0.0
+license: "MIT"
+type: software
+abstract: 'Code for the paper "Quantifying Change-Point Estimation Bias in Building Energy Models: A Monte Carlo Comparison of Optimization Methods'
+message: "If you use this software, please cite it as below."
+authors:
+  - given-names: Gwanyong
+    family-names: Park
+    affiliation: Korea Conformity Laboratories
+    orcid: "https://orcid.org/0009-0002-0816-1514"
+keywords:
+  - Building Energy Signature
+  - Change-Point Model
+  - Monte Carlo Simulation
+  - Estimation Bias
+  - Measurement and Verification

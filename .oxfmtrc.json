@@ -1,0 +1,4 @@
+{
+  "ignorePatterns": ["**/*.toml", "**/*.md"],
+  "associations": [{ "files": ["CITATION.cff"], "language": "yaml" }]
+}

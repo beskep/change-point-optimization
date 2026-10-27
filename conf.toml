@@ -1,0 +1,24 @@
+[preprocess.model]
+min_gap = 1
+
+[distribution]
+min_baseline_samples = 100
+min_r2               = 0.5
+
+[optimize.optimize]
+repeat     = 20
+resolution = ["d", "mo"]
+beta       = ["10%", "50%"]
+
+optimizers = [
+  { optimizer = "Reference" },
+  { optimizer = "IMT", steps = "2.5,0.25" },
+  { optimizer = "IMT", steps = "2.5,0.25", linear_model = "HuberT", object = "HuberT" },
+  { optimizer = "GridSearch", step = 0.15 },
+  { optimizer = "TRR", loss = "linear" },
+  { optimizer = "TRR", loss = "soft_l1" },
+  { optimizer = "MultiStartTRR" },
+  { optimizer = "InformedStartTRROptimizer", loss = "linear" },
+  { optimizer = "SegmentedRegression" },
+  { optimizer = "Muggeo" },
+]

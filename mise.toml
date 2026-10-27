@@ -1,0 +1,30 @@
+[tools]
+oxfmt = "latest"
+prek  = "latest"
+rumdl = "latest"
+tombi = "latest"
+typos = "latest"
+
+[tasks]
+"format:ruff"  = "uvx ruff format"
+"format:tombi" = "tombi format"
+"format:oxfmt" = "oxfmt"
+"format:rumdl" = "rumdl fmt"
+"lint:ruff"    = "uvx ruff check --fix"
+"lint:ty"      = "uvx ty check --fix"
+"lint:typos"   = "typos"
+
+[tasks.format]
+depends = "format:*"
+
+[tasks.lint]
+depends = "lint:*"
+
+[tasks.check]
+run = [
+  { task = "format" },
+  { task = "lint" },
+]
+
+[settings]
+task.output = "keep-order"

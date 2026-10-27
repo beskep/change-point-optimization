@@ -1,0 +1,35 @@
+axes.prop_cycle: cycler('color', ['4477AA', 'EE6677', '228833', 'CCBB44', '66CCEE', 'AA3377', 'BBBBBB', '000000'])
+
+figure.dpi:   150
+savefig.dpi:  400
+pdf.fonttype: 42
+
+figure.constrained_layout.use: True
+
+axes.edgecolor:     0.2
+axes.grid:          True
+axes.axisbelow:     True  # draw axis gridlines and ticks below patches
+axes.titlelocation: left
+axes.titleweight:   500
+
+grid.color: "#cccccc"
+grid.alpha: 0.6
+
+xtick.top:           True
+xtick.minor.visible: True
+xtick.color:         0.25
+xtick.labelcolor:    0
+xtick.direction:     in
+
+ytick.right:         True
+ytick.minor.visible: True
+ytick.color:         0.25
+ytick.labelcolor:    0
+ytick.direction:     in
+
+legend.linewidth: 0.6
+
+font.family:     sans-serif
+font.sans-serif: Source Sans 3, DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
+
+mathtext.fontset: cm  # dejavusans, cm, stix, stixsans, custom
